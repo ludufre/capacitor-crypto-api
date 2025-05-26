@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "PerfoodCapacitorCryptoApi",
+    name: "LudufreCapacitorCryptoApi",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "PerfoodCapacitorCryptoApi",
+            name: "LudufreCapacitorCryptoApi",
             targets: ["CryptoApiPlugin"])
     ],
     dependencies: [
