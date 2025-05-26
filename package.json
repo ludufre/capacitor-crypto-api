@@ -1,6 +1,6 @@
 {
-  "name": "@perfood/capacitor-crypto-api",
-  "version": "1.0.0-0",
+  "name": "@ludufre/capacitor-crypto-api",
+  "version": "1.0.0",
   "description": "Capacitor plugin that uses Secure Enclave (iOS) or StrongBox/TEE (Android) to generate key-pairs and sign data.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -76,5 +76,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

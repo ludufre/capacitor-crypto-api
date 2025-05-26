@@ -60,12 +60,12 @@ npx cap sync
 ### getECDSATags()
 
 ```typescript
-getECDSATags() => Promise<GetTagsResponse>
+getECDSATags() => any
 ```
 
 Returns all ECDSA key-pair tags that are available in the Secure Enclave (iOS) or StrongBox/TEE (Android).
 
-**Returns:** <code>Promise&lt;<a href="#gettagsresponse">GetTagsResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 --------------------
 
@@ -73,12 +73,12 @@ Returns all ECDSA key-pair tags that are available in the Secure Enclave (iOS) o
 ### getECDHTags()
 
 ```typescript
-getECDHTags() => Promise<GetTagsResponse>
+getECDHTags() => any
 ```
 
 Returns all ECDH key-pair tags that are available in the Secure Enclave (iOS) or StrongBox/TEE (Android).
 
-**Returns:** <code>Promise&lt;<a href="#gettagsresponse">GetTagsResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 --------------------
 
@@ -86,7 +86,7 @@ Returns all ECDH key-pair tags that are available in the Secure Enclave (iOS) or
 ### generateKey(...)
 
 ```typescript
-generateKey(options: GenerateKeyOptions) => Promise<GenerateKeyResponse>
+generateKey(options: GenerateKeyOptions) => any
 ```
 
 Generates a key-pair in the Secure Enclave (iOS) or StrongBox/TEE (Android),
@@ -97,7 +97,7 @@ since the private-key is protected and can't be extracted.
 | ------------- | ----------------------------------------------------------------- |
 | **`options`** | <code><a href="#generatekeyoptions">GenerateKeyOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#generatekeyresponse">GenerateKeyResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -107,7 +107,7 @@ since the private-key is protected and can't be extracted.
 ### loadKey(...)
 
 ```typescript
-loadKey(options: LoadKeyOptions) => Promise<LoadKeyResponse>
+loadKey(options: LoadKeyOptions) => any
 ```
 
 Loads the public-key from the Secure Enclave (iOS) or StrongBox/TEE (Android).
@@ -116,7 +116,7 @@ Loads the public-key from the Secure Enclave (iOS) or StrongBox/TEE (Android).
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#loadkeyoptions">LoadKeyOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#loadkeyresponse">LoadKeyResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -126,7 +126,7 @@ Loads the public-key from the Secure Enclave (iOS) or StrongBox/TEE (Android).
 ### deleteKey(...)
 
 ```typescript
-deleteKey(options: DeleteKeyOptions) => Promise<void>
+deleteKey(options: DeleteKeyOptions) => any
 ```
 
 Deletes the key-pair from the Secure Enclave (iOS) or StrongBox/TEE (Android).
@@ -134,6 +134,8 @@ Deletes the key-pair from the Secure Enclave (iOS) or StrongBox/TEE (Android).
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
 | **`options`** | <code><a href="#deletekeyoptions">DeleteKeyOptions</a></code> |
+
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -143,7 +145,7 @@ Deletes the key-pair from the Secure Enclave (iOS) or StrongBox/TEE (Android).
 ### sign(...)
 
 ```typescript
-sign(options: SignOptions) => Promise<SignResponse>
+sign(options: SignOptions) => any
 ```
 
 Signs the data in the Secure Enclave (iOS) or StrongBox/TEE (Android).
@@ -155,7 +157,7 @@ Only ECDSA is supported.
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code><a href="#signoptions">SignOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#signresponse">SignResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -165,7 +167,7 @@ Only ECDSA is supported.
 ### verify(...)
 
 ```typescript
-verify(options: VerifyOptions) => Promise<VerifyResponse>
+verify(options: VerifyOptions) => any
 ```
 
 Verifies the signature of the data with the foreign public-key.
@@ -176,7 +178,7 @@ Only ECDSA is supported.
 | ------------- | ------------------------------------------------------- |
 | **`options`** | <code><a href="#verifyoptions">VerifyOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#verifyresponse">VerifyResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
@@ -186,7 +188,7 @@ Only ECDSA is supported.
 ### encrypt(...)
 
 ```typescript
-encrypt(options: EncryptOptions) => Promise<EncryptResponse>
+encrypt(options: EncryptOptions) => any
 ```
 
 Encrypt data with AES-GCM.
@@ -195,7 +197,7 @@ Encrypt data with AES-GCM.
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#encryptoptions">EncryptOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#encryptresponse">EncryptResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 --------------------
 
@@ -203,7 +205,7 @@ Encrypt data with AES-GCM.
 ### decrypt(...)
 
 ```typescript
-decrypt(options: DecryptOptions) => Promise<DecryptResponse>
+decrypt(options: DecryptOptions) => any
 ```
 
 Decrypt data with AES-GCM.
@@ -212,7 +214,7 @@ Decrypt data with AES-GCM.
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#decryptoptions">DecryptOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#decryptresponse">DecryptResponse</a>&gt;</code>
+**Returns:** <code>any</code>
 
 --------------------
 
@@ -222,16 +224,9 @@ Decrypt data with AES-GCM.
 
 #### GetTagsResponse
 
-| Prop       | Type                  | Description        |
-| ---------- | --------------------- | ------------------ |
-| **`tags`** | <code>string[]</code> | The key-pair tags. |
-
-
-#### GenerateKeyResponse
-
-| Prop            | Type                | Description                      |
-| --------------- | ------------------- | -------------------------------- |
-| **`publicKey`** | <code>string</code> | The public-key in base64 format. |
+| Prop       | Type            | Description        |
+| ---------- | --------------- | ------------------ |
+| **`tags`** | <code>{}</code> | The key-pair tags. |
 
 
 #### GenerateKeyOptions
@@ -242,7 +237,7 @@ Decrypt data with AES-GCM.
 | **`algorithm`** | <code>'ecdsa' \| 'ecdh'</code> | The elliptic curve algorithm |
 
 
-#### LoadKeyResponse
+#### GenerateKeyResponse
 
 | Prop            | Type                | Description                      |
 | --------------- | ------------------- | -------------------------------- |
@@ -257,19 +252,19 @@ Decrypt data with AES-GCM.
 | **`algorithm`** | <code>'ecdsa' \| 'ecdh'</code> | The elliptic curve algorithm was used to create the key. |
 
 
+#### LoadKeyResponse
+
+| Prop            | Type                | Description                      |
+| --------------- | ------------------- | -------------------------------- |
+| **`publicKey`** | <code>string</code> | The public-key in base64 format. |
+
+
 #### DeleteKeyOptions
 
 | Prop            | Type                           | Description                                              |
 | --------------- | ------------------------------ | -------------------------------------------------------- |
 | **`tag`**       | <code>string</code>            | The key-pair tag.                                        |
 | **`algorithm`** | <code>'ecdsa' \| 'ecdh'</code> | The elliptic curve algorithm was used to create the key. |
-
-
-#### SignResponse
-
-| Prop            | Type                | Description                     |
-| --------------- | ------------------- | ------------------------------- |
-| **`signature`** | <code>string</code> | The signature in base64 format. |
 
 
 #### SignOptions
@@ -280,11 +275,11 @@ Decrypt data with AES-GCM.
 | **`data`** | <code>string</code> | The data to sign. |
 
 
-#### VerifyResponse
+#### SignResponse
 
-| Prop           | Type                 | Description                        |
-| -------------- | -------------------- | ---------------------------------- |
-| **`verified`** | <code>boolean</code> | Whether the signature is verified. |
+| Prop            | Type                | Description                     |
+| --------------- | ------------------- | ------------------------------- |
+| **`signature`** | <code>string</code> | The signature in base64 format. |
 
 
 #### VerifyOptions
@@ -296,12 +291,11 @@ Decrypt data with AES-GCM.
 | **`signature`**        | <code>string</code> | The signature in base64 format.          |
 
 
-#### EncryptResponse
+#### VerifyResponse
 
-| Prop             | Type                | Description                                       |
-| ---------------- | ------------------- | ------------------------------------------------- |
-| **`iv`**         | <code>string</code> | The iv in base64 format.                          |
-| **`ciphertext`** | <code>string</code> | The ciphertext (encrypted data) in base64 format. |
+| Prop           | Type                 | Description                        |
+| -------------- | -------------------- | ---------------------------------- |
+| **`verified`** | <code>boolean</code> | Whether the signature is verified. |
 
 
 #### EncryptOptions
@@ -313,11 +307,12 @@ Decrypt data with AES-GCM.
 | **`plaintext`**        | <code>string</code> | The plaintext to be encrypted.           |
 
 
-#### DecryptResponse
+#### EncryptResponse
 
-| Prop            | Type                | Description              |
-| --------------- | ------------------- | ------------------------ |
-| **`plaintext`** | <code>string</code> | The decrypted plaintext. |
+| Prop             | Type                | Description                                       |
+| ---------------- | ------------------- | ------------------------------------------------- |
+| **`iv`**         | <code>string</code> | The iv in base64 format.                          |
+| **`ciphertext`** | <code>string</code> | The ciphertext (encrypted data) in base64 format. |
 
 
 #### DecryptOptions
@@ -328,5 +323,12 @@ Decrypt data with AES-GCM.
 | **`foreignPublicKey`** | <code>string</code> | The foreign public-key in base64 format.          |
 | **`iv`**               | <code>string</code> | The iv in base64 format.                          |
 | **`ciphertext`**       | <code>string</code> | The ciphertext (encrypted data) in base64 format. |
+
+
+#### DecryptResponse
+
+| Prop            | Type                | Description              |
+| --------------- | ------------------- | ------------------------ |
+| **`plaintext`** | <code>string</code> | The decrypted plaintext. |
 
 </docgen-api>
